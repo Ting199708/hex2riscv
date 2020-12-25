@@ -17,10 +17,10 @@ If you do not install riscv-gnu-toolchain yet, please use [RISC-V GNU Compiler T
 
 2. You have two way to enter the machine code that you want to convert
 
-	a. Put the machine code in a .s file, and must follow the format as below
-	   ```
-	   .word  0x00000000
-	   .hword 0x4081
-	   ```
+    - Put the machine code in a .s file, and must follow the format as below
+      ```
+      .word  0x00000000
+      .hword 0x4081
+      ```
 	
-	b. Use our app's function 2 or 3, you just need to enter the machine code in hex format. We will create the .s file for you before convert them
+    - Use our app's function 2 or 3, you just need to enter the machine code in hex format. We will create the .s file for you before convert them
