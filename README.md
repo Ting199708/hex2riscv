@@ -19,7 +19,7 @@ If you do not install riscv-gnu-toolchain yet, please use [RISC-V GNU Compiler T
 
     - Put the machine code in a .s file, and must follow the format as below
       ```
-      .word  0x00000000
+      .word  0x00001797
       .hword 0x4081
       ```
 	
