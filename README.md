@@ -22,5 +22,5 @@ If you do not install riscv-gnu-toolchain yet, please use [RISC-V GNU Compiler T
 	   .word  0x00000000
 	   .hword 0x4081
 	   ```
-		    
+	
 	b. Use our app's function 2 or 3, you just need to enter the machine code in hex format. We will create the .s file for you before convert them
