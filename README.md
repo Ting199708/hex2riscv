@@ -6,7 +6,7 @@ The app is written in Python, and use riscv-gnu-toolchain to compile and disasse
 
 ## Installation
 
-If you do not install riscv-gnu-toolchain yet, please use [RISC-V GNU Compiler Toolchain](https://github.com/riscv/riscv-gnu-toolchain) to install
+If you have not installed the riscv-gnu-toolchain, please use [RISC-V GNU Compiler Toolchain](https://github.com/riscv/riscv-gnu-toolchain) to install
 
 ## How to use
 
