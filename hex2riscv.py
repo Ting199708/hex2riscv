@@ -5,12 +5,17 @@ gcc = 'riscv64-unknown-elf-gcc'
 objdump = 'riscv64-unknown-elf-objdump'
 
 saved_hex = []
+save_output = False
 filename = 'hex'
 
 def run_convert(hexfile):
     hexfile = hexfile.split('.')[0]
     os.system('{} -c {}'.format(gcc, hexfile + '.s'))
-    os.system('{} -d {}'.format(objdump, hexfile + '.o'))
+    if (save_output):
+        os.system('{} -d {}.o > {}.output'.format(objdump, hexfile, hexfile))
+        print('Result has been saved to {}.output'.format(hexfile))
+    else:
+        os.system('{} -d {}.o'.format(objdump, hexfile))
 
 def save_hex_file():
     with open('{}.s'.format(filename), 'w') as f:
@@ -30,7 +35,8 @@ print('| 3. Enter the hex (32 bits) and save             |')
 print('| 4. Show the instruction currently saved         |')
 print('| 5. Specify hex file name (default: hex.s)       |')
 print('| 6. Clear saved instruction                      |')
-print('| 7. Start convert saved instruction              |')
+print('| 7. Save result to a file (default: false)       |')
+print('| 8. Start convert saved instruction              |')
 print('|                                                 |')
 print('| * type \'exit\' to exit this app                  |')
 print('===================================================')
@@ -67,6 +73,12 @@ while function != 'exit':
         saved_hex = []
         print('Saved instruction already clear!')
     elif (function == '7'):
+	    save_output = ~save_output
+	    if (save_output):
+	        print('Result will be saved to a file')
+	    else:
+	        print('Result will not be saved to a file')
+    elif (function == '8'):
         save_hex_file()
         run_convert(filename + '.s')
     elif (function == 'exit'):
