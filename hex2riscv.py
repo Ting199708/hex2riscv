@@ -22,25 +22,28 @@ def save_hex_file():
         for instruction in saved_hex:
             f.write(instruction + '\n')
 
-print('===================================================')
-print('|           Welcome to use hex2riscv              |')
-print('|    Author: Chih-Cheng, Ting Date: 2020/12/25    |')
-print('|  National Cheng Kung University, Tainan, Taiwan |')
-print('|        Computer Aided Verification Lab          |')
-print('|                                                 |')
-print('| Please choose the function below:               |')
-print('| 1. Select an input hex file and start convert   |')
-print('| 2. Enter the hex (16 bits) and save             |')
-print('| 3. Enter the hex (32 bits) and save             |')
-print('| 4. Show the instruction currently saved         |')
-print('| 5. Specify hex file name (default: hex.s)       |')
-print('| 6. Clear saved instruction                      |')
-print('| 7. Save result to a file (default: false)       |')
-print('| 8. Start convert saved instruction              |')
-print('|                                                 |')
-print('| * type \'exit\' to exit this app                  |')
-print('===================================================')
+def print_help():
+    print('===================================================')
+    print('|           Welcome to use hex2riscv              |')
+    print('|    Author: Chih-Cheng, Ting Date: 2020/12/25    |')
+    print('|  National Cheng Kung University, Tainan, Taiwan |')
+    print('|        Computer Aided Verification Lab          |')
+    print('|                                                 |')
+    print('| Please choose the function below:               |')
+    print('| 1. Select an input hex file and start convert   |')
+    print('| 2. Enter the hex (16 bits) and save             |')
+    print('| 3. Enter the hex (32 bits) and save             |')
+    print('| 4. Show the instruction currently saved         |')
+    print('| 5. Specify hex file name (default: hex.s)       |')
+    print('| 6. Clear saved instruction                      |')
+    print('| 7. Save result to a file (default: false)       |')
+    print('| 8. Start convert saved instruction              |')
+    print('|                                                 |')
+    print('| * type \'help\' to show this help                 |')
+    print('| * type \'exit\' to exit this app                  |')
+    print('===================================================')
 
+print_help()
 function = ''
 
 while function != 'exit':
@@ -81,6 +84,8 @@ while function != 'exit':
     elif (function == '8'):
         save_hex_file()
         run_convert(filename + '.s')
+    elif (function == 'help'):
+        print_help()
     elif (function == 'exit'):
         print('\n\nThanks for using hex2riscv!')
     else:
